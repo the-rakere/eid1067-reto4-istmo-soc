@@ -1,0 +1,24 @@
+# Credenciales reales (solo se versiona .env.example)
+.env
+*.env
+!.env.example
+
+# Logs, capturas y bases de datos locales
+*.log
+*.json
+*.pcap
+*.pcapng
+logs/
+data/
+volumes/
+
+# Llaves y certificados privados
+*.key
+*.pem
+*.p12
+*.pfx
+
+# Archivos temporales del sistema
+.DS_Store
+*.swp
+*~
