@@ -1,0 +1,8 @@
+config/
+logs/
+rules/
+lists/
+*.pem
+*.key
+*.log
+*.json
