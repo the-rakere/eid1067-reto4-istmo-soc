@@ -1,0 +1,2 @@
+FROM wazuh/wazuh-dashboard:4.8.0@sha256:ef94e02d31262364d4ea8e1166dda1106959de602aa24d9077628b68287f6b68
+LABEL maintainer="the-rakere" service="wazuh-dashboard" reto="eid1067-reto4"

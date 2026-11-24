@@ -1,0 +1,13 @@
+services:
+  app_insegura:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: dvwa_backend
+    restart: unless-stopped
+    networks:
+      - dmz_net
+
+networks:
+  dmz_net:
+    external: true

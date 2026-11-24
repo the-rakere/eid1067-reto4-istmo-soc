@@ -1,0 +1,2 @@
+FROM mariadb:10.11@sha256:7d829180b5b2a9ba74f6242876ab401a0d7dd338a807e522ef92bc9698760f20
+LABEL maintainer="the-rakere" service="glpi-mariadb" reto="eid1067-reto4"

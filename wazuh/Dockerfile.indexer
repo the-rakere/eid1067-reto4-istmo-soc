@@ -1,0 +1,2 @@
+FROM wazuh/wazuh-indexer:4.8.0@sha256:42a563f4c94bf498b87fec9b583448f8509d920dc3b39c83f8857142367ccf47
+LABEL maintainer="the-rakere" service="wazuh-indexer" reto="eid1067-reto4"

@@ -1,0 +1,16 @@
+services:
+  ids_suricata:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: suricata_ids
+    restart: unless-stopped
+    network_mode: "host"
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    volumes:
+      - ./logs:/var/log/suricata
+      - ./rules:/etc/suricata/custom-rules
+      - ./suricata.yaml:/etc/suricata/suricata.yaml:ro
+    command: -i ${LAN_INTERFACE:-ens33} -S /etc/suricata/custom-rules/local.rules

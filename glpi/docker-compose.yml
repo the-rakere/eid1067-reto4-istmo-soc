@@ -1,0 +1,42 @@
+services:
+  mariadb:
+    build:
+      context: .
+      dockerfile: Dockerfile.db
+    container_name: glpi_db
+    restart: unless-stopped
+    command: --innodb-buffer-pool-size=128M --max-connections=50
+    environment:
+      - MARIADB_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MARIADB_DATABASE=${MYSQL_DATABASE:-glpidb}
+      - MARIADB_USER=${MYSQL_USER:-glpiuser}
+      - MARIADB_PASSWORD=${MYSQL_PASSWORD}
+    volumes:
+      - glpi_db_data:/var/lib/mysql
+    networks:
+      - istmo_soc_net
+
+  glpi:
+    build:
+      context: .
+      dockerfile: Dockerfile.glpi
+    container_name: glpi_app
+    restart: unless-stopped
+    ports:
+      - "${GLPI_PORT:-8088}:80"
+    environment:
+      - TIMEZONE=America/Panama
+    volumes:
+      - glpi_html:/var/www/html/glpi
+    depends_on:
+      - mariadb
+    networks:
+      - istmo_soc_net
+
+volumes:
+  glpi_db_data:
+  glpi_html:
+
+networks:
+  istmo_soc_net:
+    external: true

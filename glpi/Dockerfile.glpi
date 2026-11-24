@@ -1,0 +1,2 @@
+FROM diouxx/glpi@sha256:9ca43af63ddcb7e1c9b7b452a50b8204980ac549526dee1c00296793bfe7789f
+LABEL maintainer="the-rakere" service="glpi-app" reto="eid1067-reto4"
