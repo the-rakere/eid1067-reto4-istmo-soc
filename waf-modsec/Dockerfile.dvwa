@@ -1,2 +1,0 @@
-FROM vulnerables/web-dvwa:1.10
-LABEL maintainer="the-rakere" service="dvwa-backend" reto="eid1067-reto4"
